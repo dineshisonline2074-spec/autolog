@@ -1,0 +1,2656 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family:
+    Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f5f6f8;
+  color: #17191c;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+}
+
+/* Authentication */
+
+.auth-shell {
+  min-height: 100vh;
+  width: 100%;
+  padding: 30px;
+  background: #f5f6f8;
+  display: grid;
+  grid-template-columns: minmax(340px, 480px) minmax(280px, 1fr);
+  align-items: stretch;
+  justify-content: center;
+  gap: 22px;
+}
+
+.auth-panel,
+.auth-aside {
+  border-radius: 16px;
+}
+
+.auth-panel {
+  min-height: calc(100vh - 60px);
+  padding: 42px clamp(26px, 5vw, 64px);
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.auth-brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 58px;
+  color: #17191c;
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.auth-copy h1 {
+  margin: 7px 0 9px;
+  color: #17191c;
+  font-size: 28px;
+  line-height: 1.15;
+}
+
+.auth-copy > p:last-child {
+  margin: 0 0 28px;
+  color: #777d83;
+  font-size: 13px;
+}
+
+.auth-form {
+  display: grid;
+  gap: 17px;
+}
+
+.auth-form > label {
+  display: grid;
+  gap: 7px;
+  color: #555b61;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.auth-form input {
+  width: 100%;
+  border: 1px solid #dfe1e3;
+  border-radius: 7px;
+  padding: 11px 12px;
+  outline: 0;
+  background: #fafafa;
+  color: #17191c;
+  font: inherit;
+  font-size: 12px;
+}
+
+.auth-form input:focus {
+  border-color: #888e94;
+  background: #fff;
+}
+
+.password-input {
+  position: relative;
+  display: block;
+}
+
+.password-input input {
+  padding-right: 42px;
+}
+
+.password-input button {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  width: 28px;
+  height: 28px;
+  transform: translateY(-50%);
+  border: 0;
+  background: transparent;
+  color: #777d83;
+  display: grid;
+  place-items: center;
+}
+
+.password-input button:hover {
+  color: #17191c;
+}
+
+.auth-submit {
+  border: 0;
+  border-radius: 8px;
+  padding: 12px 17px;
+  background: #17191c;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.auth-submit:hover {
+  background: #2a2e31;
+}
+
+.auth-switch {
+  margin: 2px 0 0;
+  color: #777d83;
+  font-size: 12px;
+  text-align: center;
+}
+
+.auth-switch button {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: #17191c;
+  font-weight: 700;
+}
+
+.auth-message {
+  margin: -2px 0 0;
+  font-size: 11px;
+}
+
+.auth-message.error {
+  color: #a33f3f;
+}
+
+.auth-message.success {
+  color: #52705a;
+}
+
+.auth-aside {
+  min-height: calc(100vh - 60px);
+  padding: 48px;
+  background: #17191c;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.auth-aside > svg {
+  margin-bottom: auto;
+  color: #e8e9eb;
+}
+
+.auth-aside span {
+  color: #92979c;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+}
+
+.auth-aside strong {
+  margin-top: 8px;
+  font-size: 31px;
+}
+
+.auth-aside p {
+  max-width: 300px;
+  margin: 10px 0 0;
+  color: #92979c;
+  font-size: 13px;
+}
+
+/* Settings */
+
+.settings-page {
+  margin-top: 30px;
+}
+
+.settings-intro {
+  padding: 25px 30px;
+  background: #fff;
+  border: 1px solid #e6e8eb;
+  border-radius: 14px;
+}
+
+.settings-intro h2 {
+  margin: 5px 0 4px;
+  font-size: 24px;
+}
+
+.settings-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.settings-section {
+  padding: 21px;
+  background: #fff;
+  border: 1px solid #e6e8eb;
+  border-radius: 13px;
+}
+
+.settings-section-header {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 19px;
+}
+
+.settings-section-icon {
+  width: 35px;
+  height: 35px;
+  border-radius: 9px;
+  background: #f0f1f2;
+  color: #555b61;
+  display: grid;
+  place-items: center;
+}
+
+.settings-section-header h3 {
+  margin: 4px 0 0;
+  font-size: 16px;
+}
+
+.settings-form,
+.settings-options {
+  display: grid;
+  gap: 13px;
+}
+
+.settings-form label,
+.settings-field {
+  display: grid;
+  gap: 7px;
+  color: #555b61;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.settings-form input,
+.settings-field select {
+  width: 100%;
+  border: 1px solid #dfe1e3;
+  border-radius: 7px;
+  padding: 10px 11px;
+  outline: 0;
+  background: #fafafa;
+  color: #17191c;
+  font: inherit;
+  font-size: 12px;
+}
+
+.settings-form input:focus,
+.settings-field select:focus {
+  border-color: #888e94;
+  background: #fff;
+}
+
+.settings-form .secondary-add-button {
+  justify-content: center;
+  margin-top: 3px;
+}
+
+.settings-message {
+  margin: 0;
+  font-size: 11px;
+}
+
+.settings-message.success {
+  color: #52705a;
+}
+
+.settings-message.error {
+  color: #a33f3f;
+}
+
+.settings-help {
+  margin: 10px 0 0;
+  color: #898f95;
+  font-size: 10px;
+}
+
+.toggle-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  min-height: 40px;
+  color: #555b61;
+}
+
+.toggle-row strong,
+.toggle-row small {
+  display: block;
+}
+
+.toggle-row strong {
+  font-size: 12px;
+}
+
+.toggle-row small {
+  margin-top: 4px;
+  color: #898f95;
+  font-size: 10px;
+  font-weight: 400;
+}
+
+.toggle-row input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.toggle-control {
+  position: relative;
+  flex: 0 0 40px;
+  width: 40px;
+  height: 22px;
+  border-radius: 20px;
+  background: #dfe1e3;
+  transition: background 160ms ease;
+}
+
+.toggle-control::after {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  content: "";
+  transition: transform 160ms ease;
+}
+
+.toggle-row input:checked + .toggle-control {
+  background: #17191c;
+}
+
+.toggle-row input:checked + .toggle-control::after {
+  transform: translateX(18px);
+}
+
+.appearance-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9px;
+}
+
+.appearance-options button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: 1px solid #dfe1e3;
+  border-radius: 7px;
+  padding: 10px;
+  background: #fff;
+  color: #666c72;
+  font-size: 11px;
+}
+
+.appearance-options button.selected,
+.appearance-options button:hover {
+  border-color: #17191c;
+  background: #17191c;
+  color: #fff;
+}
+
+.account-details {
+  padding: 13px;
+  border-radius: 8px;
+  background: #f5f6f8;
+}
+
+.account-details span,
+.account-details strong {
+  display: block;
+}
+
+.account-details span {
+  color: #898f95;
+  font-size: 10px;
+}
+
+.account-details strong {
+  overflow: hidden;
+  margin-top: 5px;
+  color: #17191c;
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.logout-settings-button {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 13px;
+  border: 1px solid #d9bbbb;
+  border-radius: 7px;
+  padding: 9px 11px;
+  background: #fff;
+  color: #a33f3f;
+  font-size: 11px;
+}
+
+.logout-settings-button:hover {
+  background: #f6eaea;
+}
+
+html[data-theme="dark"] body {
+  background: #0f1113;
+  color: #f4f5f5;
+}
+
+html[data-theme="dark"] .main,
+html[data-theme="dark"] .settings-intro,
+html[data-theme="dark"] .settings-section,
+html[data-theme="dark"] .panel,
+html[data-theme="dark"] .page-intro,
+html[data-theme="dark"] .welcome,
+html[data-theme="dark"] .stat-card,
+html[data-theme="dark"] .fuel-stat,
+html[data-theme="dark"] .analytics-stat,
+html[data-theme="dark"] .vehicle-detail-stat,
+html[data-theme="dark"] .service-history-summary div,
+html[data-theme="dark"] .expense-summary,
+html[data-theme="dark"] .maintenance-summary,
+html[data-theme="dark"] .service-history-list,
+html[data-theme="dark"] .expense-record-list,
+html[data-theme="dark"] .maintenance-record-list,
+html[data-theme="dark"] .analytics-vehicles,
+html[data-theme="dark"] .saved-vehicle-card {
+  color: #f4f5f5;
+}
+
+html[data-theme="dark"] .settings-intro,
+html[data-theme="dark"] .settings-section,
+html[data-theme="dark"] .panel,
+html[data-theme="dark"] .page-intro,
+html[data-theme="dark"] .welcome,
+html[data-theme="dark"] .stat-card,
+html[data-theme="dark"] .fuel-stat,
+html[data-theme="dark"] .analytics-stat,
+html[data-theme="dark"] .vehicle-detail-stat,
+html[data-theme="dark"] .service-history-summary div,
+html[data-theme="dark"] .expense-summary,
+html[data-theme="dark"] .maintenance-summary,
+html[data-theme="dark"] .service-history-list,
+html[data-theme="dark"] .expense-record-list,
+html[data-theme="dark"] .maintenance-record-list,
+html[data-theme="dark"] .analytics-vehicles,
+html[data-theme="dark"] .saved-vehicle-card {
+  background: #17191c;
+  border-color: #2e3337;
+}
+
+html[data-theme="dark"] .settings-form input,
+html[data-theme="dark"] .settings-field select,
+html[data-theme="dark"] .history-filter select,
+html[data-theme="dark"] .account-details,
+html[data-theme="dark"] .appearance-options button,
+html[data-theme="dark"] .details-card-button,
+html[data-theme="dark"] .secondary-add-button {
+  background: #202428;
+  border-color: #3a4045;
+  color: #f4f5f5;
+}
+
+html[data-theme="dark"] .settings-intro h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] .account-details strong,
+html[data-theme="dark"] .stat-card h3,
+html[data-theme="dark"] .fuel-stat strong,
+html[data-theme="dark"] .analytics-stat strong,
+html[data-theme="dark"] .vehicle-detail-stat strong,
+html[data-theme="dark"] .service-history-table td strong,
+html[data-theme="dark"] .expense-table td strong,
+html[data-theme="dark"] .maintenance-table td strong {
+  color: #f4f5f5;
+}
+
+html[data-theme="dark"] .service-history-table td,
+html[data-theme="dark"] .expense-table td,
+html[data-theme="dark"] .maintenance-table td {
+  border-color: #2e3337;
+  color: #c1c6c9;
+}
+
+/* Sidebar */
+
+.sidebar {
+  width: 250px;
+  min-height: 100vh;
+  overflow-y: auto;
+  background: #111315;
+  color: #fff;
+  padding: 26px 18px;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 0 12px 30px;
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.brand-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+  background: #fff;
+  color: #111315;
+  display: grid;
+  place-items: center;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex-shrink: 0;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 12px;
+  border-radius: 9px;
+  color: #aeb3b8;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.navigation .nav-item,
+.sidebar-bottom .nav-item {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  text-align: left;
+}
+
+.navigation .reminders-nav-item {
+  display: flex;
+  visibility: visible;
+  opacity: 1;
+}
+
+.history-filter {
+  display: grid;
+  gap: 7px;
+  min-width: 180px;
+  color: #555b61;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.history-filter select {
+  border: 1px solid #dfe1e3;
+  border-radius: 7px;
+  padding: 10px 11px;
+  background: #fafafa;
+  color: #17191c;
+  font: inherit;
+  font-size: 12px;
+}
+
+.nav-item:hover {
+  background: #1d2023;
+  color: #fff;
+}
+
+.nav-item.active {
+  background: #fff;
+  color: #111315;
+  font-weight: 600;
+}
+
+.sidebar-bottom {
+  margin-top: auto;
+}
+
+.logout-item {
+  margin-top: 5px;
+}
+
+.profile {
+  border-top: 1px solid #292c2f;
+  margin-top: 18px;
+  padding: 18px 8px 4px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #e8e9eb;
+  color: #111315;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+}
+
+.profile strong,
+.profile span {
+  display: block;
+}
+
+.profile strong {
+  font-size: 13px;
+}
+
+.profile span {
+  color: #858b91;
+  font-size: 11px;
+  margin-top: 2px;
+}
+
+/* Main */
+
+.main {
+  margin-left: 250px;
+  width: calc(100% - 250px);
+  padding: 34px 42px 50px;
+  max-width: 1600px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.eyebrow,
+.label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+  color: #8a9096;
+  margin: 0;
+}
+
+.topbar h1 {
+  font-size: 29px;
+  margin: 5px 0 0;
+}
+
+.add-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #17191c;
+  color: white;
+  border: 0;
+  padding: 11px 17px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Welcome */
+
+.welcome {
+  margin-top: 30px;
+  padding: 28px 30px;
+  background: #fff;
+  border: 1px solid #e6e8eb;
+  border-radius: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.muted {
+  color: #777d83;
+  margin: 0 0 5px;
+  font-size: 13px;
+}
+
+.welcome h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.description {
+  color: #777d83;
+  font-size: 13px;
+  margin-bottom: 0;
+}
+
+.date {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #666c72;
+  font-size: 12px;
+}
+
+/* Vehicle */
+
+.vehicle-card {
+  margin-top: 18px;
+  background: #17191c;
+  color: white;
+  border-radius: 14px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.vehicle-image {
+  width: 150px;
+  height: 105px;
+  border-radius: 11px;
+  background: #25282b;
+  display: grid;
+  place-items: center;
+  color: #e8e9eb;
+}
+
+.vehicle-info {
+  flex: 1;
+}
+
+.vehicle-info h2 {
+  margin: 5px 0;
+  font-size: 22px;
+}
+
+.vehicle-info p {
+  margin: 0;
+  color: #92979c;
+  font-size: 12px;
+}
+
+.vehicle-stats {
+  display: flex;
+  gap: 28px;
+  margin-top: 17px;
+}
+
+.vehicle-stats div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #92979c;
+}
+
+.vehicle-stats span {
+  display: flex;
+  flex-direction: column;
+  font-size: 10px;
+}
+
+.vehicle-stats strong {
+  color: white;
+  font-size: 13px;
+}
+
+.outline-button {
+  background: transparent;
+  border: 1px solid #45494d;
+  color: white;
+  border-radius: 7px;
+  padding: 9px 14px;
+  font-size: 12px;
+}
+
+/* Stats */
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-top: 18px;
+}
+
+.stat-card {
+  background: white;
+  border: 1px solid #e6e8eb;
+  border-radius: 13px;
+  padding: 18px;
+}
+
+.stat-card span {
+  color: #777d83;
+  font-size: 12px;
+}
+
+.stat-card h3 {
+  margin: 9px 0 2px;
+  font-size: 22px;
+}
+
+.stat-card small {
+  color: #9a9fa4;
+  font-size: 10px;
+}
+
+.stat-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 13px;
+}
+
+.fuel-icon {
+  background: #eef3ee;
+}
+
+.service-icon {
+  background: #f1f0ed;
+}
+
+.expense-icon {
+  background: #eeeeef;
+}
+
+.reminder-icon {
+  background: #f3eeee;
+}
+
+/* Bottom */
+
+.bottom-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.panel {
+  background: white;
+  border: 1px solid #e6e8eb;
+  border-radius: 13px;
+  padding: 22px;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 18px;
+}
+
+.panel-header h3 {
+  margin: 5px 0 0;
+  font-size: 17px;
+}
+
+.service-item {
+  border-top: 1px solid #eeeeef;
+  padding: 15px 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.service-icon-box {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: #f0f1f2;
+  display: grid;
+  place-items: center;
+}
+
+.service-item > div:nth-child(2) {
+  flex: 1;
+}
+
+.service-item strong {
+  display: block;
+  font-size: 13px;
+}
+
+.service-item p {
+  margin: 3px 0 0;
+  color: #898f95;
+  font-size: 11px;
+}
+
+.status {
+  font-size: 10px;
+  padding: 5px 8px;
+  background: #f0f1f2;
+  border-radius: 5px;
+  color: #666c72;
+}
+
+.quick-actions {
+  display: grid;
+  gap: 10px;
+}
+
+.quick-actions button {
+  border: 1px solid #e1e3e5;
+  background: #fafafa;
+  padding: 13px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-align: left;
+  color: #33373b;
+  font-size: 12px;
+}
+
+.quick-actions button:hover {
+  background: #f0f1f2;
+}
+
+.dashboard-secondary-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-top: 18px;
+}
+
+.dashboard-secondary-stat {
+  padding: 16px 18px;
+  background: #fff;
+  border: 1px solid #e6e8eb;
+  border-radius: 13px;
+}
+
+.dashboard-secondary-stat span,
+.dashboard-secondary-stat strong {
+  display: block;
+}
+
+.dashboard-secondary-stat span {
+  color: #777d83;
+  font-size: 11px;
+}
+
+.dashboard-secondary-stat strong {
+  margin-top: 8px;
+  font-size: 18px;
+}
+
+.activity-empty {
+  padding: 22px 0 8px;
+  color: #898f95;
+  font-size: 12px;
+}
+
+/* My Vehicles */
+
+.vehicles-page {
+  margin-top: 30px;
+}
+
+.page-intro {
+  background: #fff;
+  border: 1px solid #e6e8eb;
+  border-radius: 14px;
+  padding: 28px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.page-intro h2 {
+  margin: 5px 0 0;
+  font-size: 24px;
+}
+
+.vehicle-count {
+  color: #666c72;
+  background: #f1f2f3;
+  border-radius: 6px;
+  padding: 7px 10px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.vehicles-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.saved-vehicle-card {
+  position: relative;
+  display: flex;
+  gap: 18px;
+  min-width: 0;
+  padding: 18px;
+  background: #fff;
+  border: 1px solid #e6e8eb;
+  border-radius: 13px;
+}
+
+.details-card-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid #e1e3e5;
+  border-radius: 7px;
+  padding: 7px 9px;
+  background: #fff;
+  color: #555b61;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.details-card-button:hover {
+  background: #f1f2f3;
+  color: #17191c;
+}
+
+.saved-vehicle-visual {
+  flex: 0 0 112px;
+  height: 88px;
+  border-radius: 10px;
+  background: #17191c;
+  color: #e8e9eb;
+  display: grid;
+  place-items: center;
+}
+
+.saved-vehicle-content {
+  min-width: 0;
+  padding: 2px 28px 0 0;
+}
+
+.saved-vehicle-content h3 {
+  overflow: hidden;
+  margin: 5px 0 3px;
+  font-size: 18px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.saved-vehicle-content > p {
+  overflow: hidden;
+  margin: 0;
+  color: #898f95;
+  font-size: 11px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.vehicle-meta {
+  display: flex;
+  gap: 13px;
+  margin-top: 14px;
+  color: #666c72;
+  font-size: 10px;
+}
+
+.vehicle-meta span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.card-actions {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  display: flex;
+  gap: 4px;
+}
+
+.icon-button,
+.close-button {
+  width: 31px;
+  height: 31px;
+  border: 1px solid #e1e3e5;
+  border-radius: 7px;
+  background: #fff;
+  color: #666c72;
+  display: grid;
+  place-items: center;
+}
+
+.icon-button:hover,
+.close-button:hover {
+  background: #f1f2f3;
+  color: #17191c;
+}
+
+.delete-button:hover,
+.delete-text-button:hover {
+  color: #a33f3f;
+}
+
+.empty-vehicles {
+  margin-top: 18px;
+  padding: 70px 25px;
+  background: #fff;
+  border: 1px solid #e6e8eb;
+  border-radius: 14px;
+  text-align: center;
+}
+
+.empty-icon {
+  width: 58px;
+  height: 58px;
+  margin: 0 auto 16px;
+  border-radius: 12px;
+  background: #f0f1f2;
+  color: #666c72;
+  display: grid;
+  place-items: center;
+}
+
+.empty-vehicles h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.empty-vehicles p {
+  margin: 7px 0 20px;
+  color: #898f95;
+  font-size: 12px;
+}
+
+/* Fuel Tracking */
+
+.fuel-page {
+  margin-top: 30px;
+}
+
+.fuel-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-top: 18px;
+}
+
+.fuel-stat {
+  padding: 18px;
+  background: #fff;
+  border: 1px solid #e6e8eb;
+  border-radius: 13px;
+}
+
+.fuel-stat span,
+.fuel-stat strong {
+  display: block;
+}
+
+.fuel-stat span {
+  color: #777d83;
+  font-size: 11px;
+}
+
+.fuel-stat strong {
+  margin-top: 9px;
+  font-size: 20px;
+}
+
+.fuel-insights {
+  display: flex;
+  gap: 26px;
+  margin-top: 18px;
+  padding: 16px 20px;
+  background: #17191c;
+  border-radius: 12px;
+  color: #92979c;
+}
+
+.fuel-insights > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.fuel-insights span,
+.fuel-insights strong {
+  display: block;
+}
+
+.fuel-insights span {
+  font-size: 10px;
+}
+
+.fuel-insights strong {
+  margin-top: 3px;
+  color: #fff;
+  font-size: 13px;
+}
+
+.fuel-entry-list {
+  margin-top: 18px;
+  padding: 22px;
+  background: #fff;
+  border: 1px solid #e6e8eb;
+  border-radius: 13px;
+}
+
+.fuel-list-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.fuel-list-header h3 {
+  margin: 5px 0 0;
+  font-size: 17px;
+}
+
+.secondary-add-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 11px;
+  border: 1px solid #dfe1e3;
+  border-radius: 7px;
+  background: #fff;
+  color: #33373b;
+  font-size: 11px;
+}
+
+.secondary-add-button:hover {
+  background: #f1f2f3;
+}
+
+.fuel-table-wrap {
+  overflow-x: auto;
+}
+
+.fuel-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 720px;
+  text-align: left;
+}
+
+.fuel-table th {
+  padding: 0 12px 11px;
+  color: #8a9096;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.fuel-table td {
+  padding: 13px 12px;
+  border-top: 1px solid #eeeeef;
+  color: #555b61;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.fuel-table td strong,
+.fuel-table td small {
+  display: block;
+}
+
+.fuel-table td strong {
+  color: #17191c;
+  font-size: 12px;
+}
+
+.fuel-table td small {
+  margin-top: 3px;
+  color: #898f95;
+  font-size: 10px;
+}
+
+.fuel-empty {
+  margin-top: 18px;
+}
+
+.calculated-input {
+  color: #555b61 !important;
+  font-weight: 600;
+}
+
+/* Maintenance */
+
+.maintenance-page {
+  margin-top: 30px;
+}
+
+.maintenance-summary {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-top: 18px;
+  padding: 18px 20px;
+  background: #fff;
+  border: 1px solid #e6e8eb;
+  border-radius: 13px;
+}
+
+.maintenance-total-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 9px;
+  background: #f1f0ed;
+  color: #555b61;
+  display: grid;
+  place-items: center;
+}
+
+.maintenance-summary span,
+.maintenance-summary strong {
+  display: block;
+}
+
+.maintenance-summary span {
+  color: #777d83;
+  font-size: 11px;
+}
+
+.maintenance-summary strong {
+  margin-top: 4px;
+  font-size: 20px;
+}
+
+.maintenance-summary-count {
+  margin-left: auto;
+  padding-left: 22px;
+  border-left: 1px solid #e6e8eb;
+}
+
+.maintenance-record-list {
+  margin-top: 18px;
+  padding: 22px;
+  background: #fff;
+  border: 1px solid #e6e8eb;
+  border-radius: 13px;
+}
+
+.maintenance-list-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.maintenance-list-header h3 {
+  margin: 5px 0 0;
+  font-size: 17px;
+}
+
+.maintenance-table-wrap {
+  overflow-x: auto;
+}
+
+.maintenance-table {
+  width: 100%;
+  min-width: 800px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.maintenance-table th {
+  padding: 0 12px 11px;
+  color: #8a9096;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.maintenance-table td {
+  max-width: 190px;
+  padding: 13px 12px;
+  border-top: 1px solid #eeeeef;
+  color: #555b61;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.maintenance-table td strong,
+.maintenance-table td small {
+  display: block;
+}
+
+.maintenance-table td strong {
+  color: #17191c;
+  font-size: 12px;
+}
+
+.maintenance-table td small {
+  margin-top: 3px;
+  color: #898f95;
+  font-size: 10px;
+}
+
+.maintenance-table .maintenance-notes {
+  overflow: hidden;
+  max-width: 170px;
+  text-overflow: ellipsis;
+}
+
+.maintenance-empty {
+  margin-top: 18px;
+}
+
+/* Service History */
+
+.service-history-page {
+  margin-top: 30px;
+}
+
+.service-history-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-top: 18px;
+}
+
+.service-history-summary div {
+  padding: 18px;
+  background: #fff;
+  border: 1px solid #e6e8eb;
+  border-radius: 13px;
+}
+
+.service-history-summary span,
+.service-history-summary strong {
+  display: block;
+}
+
+.service-history-summary span {
+  color: #777d83;
+  font-size: 11px;
+}
+
+.service-history-summary strong {
+  margin-top: 8px;
+  font-size: 20px;
+}
+
+.service-history-list {
+  margin-top: 18px;
+  padding: 22px;
+  background: #fff;
+  border: 1px solid #e6e8eb;
+  border-radius: 13px;
+}
+
+.service-history-list-header h3 {
+  margin: 5px 0 0;
+  font-size: 17px;
+}
+
+.service-history-table-wrap {
+  overflow-x: auto;
+  margin-top: 18px;
+}
+
+.service-history-table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.service-history-table th {
+  padding: 0 12px 11px;
+  color: #8a9096;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.service-history-table td {
+  max-width: 180px;
+  padding: 13px 12px;
+  border-top: 1px solid #eeeeef;
+  color: #555b61;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.service-history-table td strong,
+.service-history-table td small {
+  display: block;
+}
+
+.service-history-table td strong {
+  color: #17191c;
+  font-size: 12px;
+}
+
+.service-history-table td small {
+  margin-top: 3px;
+  color: #898f95;
+  font-size: 10px;
+}
+
+.service-history-notes {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.service-history-empty {
+  margin-top: 18px;
+}
+
+.history-link-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 18px;
+  border: 1px solid #dfe1e3;
+  border-radius: 7px;
+  padding: 8px 11px;
+  background: #fff;
+  color: #555b61;
+  font-size: 11px;
+}
+
+.history-link-button:hover {
+  background: #f1f2f3;
+  color: #17191c;
+}
+
+/* Expenses */
+
+.expenses-page {
+  margin-top: 30px;
+}
+
+.expense-summary {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-top: 18px;
+  padding: 18px 20px;
+  background: #fff;
+  border: 1px solid #e6e8eb;
+  border-radius: 13px;
+}
+
+.expense-total-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 9px;
+  background: #eeeeef;
+  color: #555b61;
+  display: grid;
+  place-items: center;
+}
+
+.expense-summary span,
+.expense-summary strong {
+  display: block;
+}
+
+.expense-summary span {
+  color: #777d83;
+  font-size: 11px;
+}
+
+.expense-summary strong {
+  margin-top: 4px;
+  font-size: 20px;
+}
+
+.expense-summary-count {
+  margin-left: auto;
+  padding-left: 22px;
+  border-left: 1px solid #e6e8eb;
+}
+
+.expense-record-list {
+  margin-top: 18px;
+  padding: 22px;
+  background: #fff;
+  border: 1px solid #e6e8eb;
+  border-radius: 13px;
+}
+
+.expense-list-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.expense-list-header h3 {
+  margin: 5px 0 0;
+  font-size: 17px;
+}
+
+.expense-table-wrap {
+  overflow-x: auto;
+}
+
+.expense-table {
+  width: 100%;
+  min-width: 700px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.expense-table th {
+  padding: 0 12px 11px;
+  color: #8a9096;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.expense-table td {
+  max-width: 190px;
+  padding: 13px 12px;
+  border-top: 1px solid #eeeeef;
+  color: #555b61;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.expense-table td strong,
+.expense-table td small {
+  display: block;
+}
+
+.expense-table td strong {
+  color: #17191c;
+  font-size: 12px;
+}
+
+.expense-table td small {
+  margin-top: 3px;
+  color: #898f95;
+  font-size: 10px;
+}
+
+.expense-table .expense-notes {
+  overflow: hidden;
+  max-width: 170px;
+  text-overflow: ellipsis;
+}
+
+.expense-empty {
+  margin-top: 18px;
+}
+
+/* Vehicle Details */
+
+.vehicle-details-page {
+  margin-top: 26px;
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: #666c72;
+  font-size: 12px;
+}
+
+.back-button:hover {
+  color: #17191c;
+}
+
+.vehicle-details-hero {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-top: 17px;
+  padding: 24px;
+  border-radius: 14px;
+  background: #17191c;
+  color: #fff;
+}
+
+.vehicle-details-visual {
+  width: 138px;
+  height: 106px;
+  border-radius: 11px;
+  background: #25282b;
+  color: #e8e9eb;
+  display: grid;
+  place-items: center;
+}
+
+.vehicle-details-heading {
+  flex: 1;
+}
+
+.vehicle-details-heading h2 {
+  margin: 6px 0 4px;
+  color: #fff;
+  font-size: 26px;
+}
+
+.vehicle-details-heading p {
+  margin: 0;
+  color: #92979c;
+  font-size: 12px;
+}
+
+.vehicle-details-heading p span {
+  padding: 0 5px;
+}
+
+.vehicle-details-specs {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  color: #d1d4d6;
+  font-size: 11px;
+  text-align: right;
+}
+
+.vehicle-detail-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-top: 18px;
+}
+
+.vehicle-detail-stat {
+  padding: 17px;
+  background: #fff;
+  border: 1px solid #e6e8eb;
+  border-radius: 13px;
+}
+
+.vehicle-detail-stat-icon {
+  width: 35px;
+  height: 35px;
+  margin-bottom: 12px;
+  border-radius: 9px;
+  background: #f0f1f2;
+  color: #555b61;
+  display: grid;
+  place-items: center;
+}
+
+.vehicle-detail-stat span,
+.vehicle-detail-stat strong {
+  display: block;
+}
+
+.vehicle-detail-stat span {
+  color: #777d83;
+  font-size: 11px;
+}
+
+.vehicle-detail-stat strong {
+  margin-top: 7px;
+  font-size: 19px;
+}
+
+.vehicle-activity-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.vehicle-info-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.vehicle-info-list div {
+  padding-top: 12px;
+  border-top: 1px solid #eeeeef;
+}
+
+.vehicle-info-list span,
+.vehicle-info-list strong {
+  display: block;
+}
+
+.vehicle-info-list span {
+  color: #898f95;
+  font-size: 10px;
+}
+
+.vehicle-info-list strong {
+  margin-top: 4px;
+  font-size: 12px;
+}
+
+/* Analytics */
+
+.analytics-page {
+  margin-top: 30px;
+}
+
+.analytics-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-top: 18px;
+}
+
+.analytics-stat {
+  padding: 18px;
+  background: #fff;
+  border: 1px solid #e6e8eb;
+  border-radius: 13px;
+}
+
+.analytics-stat-icon {
+  width: 36px;
+  height: 36px;
+  margin-bottom: 13px;
+  border-radius: 9px;
+  display: grid;
+  place-items: center;
+}
+
+.fuel-analytics-icon {
+  background: #eef3ee;
+}
+
+.maintenance-analytics-icon {
+  background: #f1f0ed;
+}
+
+.expense-analytics-icon {
+  background: #eeeeef;
+}
+
+.total-analytics-icon {
+  background: #f3eeee;
+}
+
+.analytics-stat span,
+.analytics-stat strong {
+  display: block;
+}
+
+.analytics-stat span {
+  color: #777d83;
+  font-size: 11px;
+}
+
+.analytics-stat strong {
+  margin-top: 8px;
+  font-size: 20px;
+}
+
+.analytics-insight {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-top: 18px;
+  padding: 17px 20px;
+  border-radius: 12px;
+  background: #17191c;
+  color: #fff;
+}
+
+.analytics-insight-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 9px;
+  background: #25282b;
+  color: #e8e9eb;
+  display: grid;
+  place-items: center;
+}
+
+.analytics-insight span,
+.analytics-insight strong {
+  display: block;
+}
+
+.analytics-insight span {
+  color: #92979c;
+  font-size: 10px;
+}
+
+.analytics-insight strong {
+  margin-top: 3px;
+  font-size: 15px;
+}
+
+.analytics-insight small {
+  margin-left: auto;
+  color: #92979c;
+  font-size: 10px;
+}
+
+.analytics-vehicles {
+  margin-top: 18px;
+  padding: 22px;
+  background: #fff;
+  border: 1px solid #e6e8eb;
+  border-radius: 13px;
+}
+
+.analytics-section-header h3 {
+  margin: 5px 0 0;
+  font-size: 17px;
+}
+
+.analytics-vehicle-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.analytics-vehicle-card {
+  padding: 16px;
+  border: 1px solid #e6e8eb;
+  border-radius: 10px;
+}
+
+.analytics-vehicle-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.analytics-car-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: #f0f1f2;
+  color: #555b61;
+  display: grid;
+  place-items: center;
+}
+
+.analytics-vehicle-heading strong,
+.analytics-vehicle-heading span {
+  display: block;
+}
+
+.analytics-vehicle-heading strong {
+  font-size: 13px;
+}
+
+.analytics-vehicle-heading span {
+  margin-top: 3px;
+  color: #898f95;
+  font-size: 10px;
+}
+
+.analytics-vehicle-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 17px;
+  padding-top: 14px;
+  border-top: 1px solid #eeeeef;
+}
+
+.analytics-vehicle-metrics span,
+.analytics-vehicle-metrics strong {
+  display: block;
+}
+
+.analytics-vehicle-metrics span {
+  color: #898f95;
+  font-size: 9px;
+}
+
+.analytics-vehicle-metrics strong {
+  margin-top: 4px;
+  font-size: 11px;
+}
+
+.analytics-empty {
+  margin-top: 18px;
+}
+
+/* Reminders */
+
+.reminders-page {
+  margin-top: 30px;
+}
+
+.reminder-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-top: 18px;
+}
+
+.reminder-summary {
+  padding: 17px 18px;
+  background: #fff;
+  border: 1px solid #e6e8eb;
+  border-radius: 13px;
+  border-left: 3px solid #dfe1e3;
+}
+
+.reminder-summary span,
+.reminder-summary strong {
+  display: block;
+}
+
+.reminder-summary span {
+  color: #777d83;
+  font-size: 11px;
+}
+
+.reminder-summary strong {
+  margin-top: 8px;
+  font-size: 22px;
+}
+
+.reminder-upcoming {
+  border-left-color: #8d9990;
+}
+
+.reminder-soon {
+  border-left-color: #c39a56;
+}
+
+.reminder-overdue {
+  border-left-color: #b46060;
+}
+
+.reminder-record-list {
+  margin-top: 18px;
+  padding: 22px;
+  background: #fff;
+  border: 1px solid #e6e8eb;
+  border-radius: 13px;
+}
+
+.reminder-list-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.reminder-list-header h3 {
+  margin: 5px 0 0;
+  font-size: 17px;
+}
+
+.reminder-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.reminder-card {
+  position: relative;
+  display: flex;
+  gap: 13px;
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid #e6e8eb;
+  border-left: 3px solid #dfe1e3;
+  border-radius: 10px;
+}
+
+.reminder-card.overdue {
+  border-left-color: #b46060;
+}
+
+.reminder-card.due-soon {
+  border-left-color: #c39a56;
+}
+
+.reminder-card.upcoming {
+  border-left-color: #8d9990;
+}
+
+.reminder-type-icon {
+  flex: 0 0 35px;
+  width: 35px;
+  height: 35px;
+  border-radius: 9px;
+  background: #f0f1f2;
+  color: #555b61;
+  display: grid;
+  place-items: center;
+}
+
+.reminder-card-content {
+  min-width: 0;
+  flex: 1;
+  padding-right: 28px;
+}
+
+.reminder-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.reminder-type {
+  color: #898f95;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+}
+
+.reminder-status {
+  padding: 4px 7px;
+  border-radius: 5px;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.reminder-status.overdue {
+  background: #f6eaea;
+  color: #a33f3f;
+}
+
+.reminder-status.due-soon {
+  background: #f8f1e5;
+  color: #956f2d;
+}
+
+.reminder-status.upcoming {
+  background: #edf2ed;
+  color: #5b755f;
+}
+
+.reminder-card h3 {
+  overflow: hidden;
+  margin: 8px 0 4px;
+  font-size: 15px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.reminder-card p {
+  overflow: hidden;
+  margin: 0;
+  color: #898f95;
+  font-size: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.reminder-meta {
+  display: flex;
+  gap: 13px;
+  margin-top: 12px;
+  color: #666c72;
+  font-size: 10px;
+}
+
+.reminder-meta span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.reminder-card > .icon-button {
+  position: absolute;
+  top: 13px;
+  right: 13px;
+}
+
+.reminder-notes {
+  display: block;
+  overflow: hidden;
+  margin-top: 11px;
+  color: #898f95;
+  font-size: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.optional-label {
+  color: #9a9fa4;
+  font-weight: 400;
+}
+
+.form-grid textarea {
+  width: 100%;
+  resize: vertical;
+  border: 1px solid #dfe1e3;
+  border-radius: 7px;
+  padding: 10px 11px;
+  outline: 0;
+  background: #fafafa;
+  color: #17191c;
+  font: inherit;
+  font-size: 12px;
+}
+
+.form-grid textarea:focus {
+  border-color: #888e94;
+  background: #fff;
+}
+
+/* Modal */
+
+.modal-backdrop {
+  position: fixed;
+  z-index: 10;
+  inset: 0;
+  padding: 24px;
+  background: rgba(17, 19, 21, 0.48);
+  display: grid;
+  place-items: center;
+}
+
+.modal {
+  width: min(100%, 570px);
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
+  padding: 25px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 20px 60px rgba(17, 19, 21, 0.2);
+}
+
+.modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.modal-header h2 {
+  margin: 5px 0 0;
+  font-size: 23px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 17px 14px;
+}
+
+.form-grid label {
+  display: grid;
+  gap: 7px;
+  color: #555b61;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.form-grid .full-field {
+  grid-column: 1 / -1;
+}
+
+.form-grid input,
+.form-grid select {
+  width: 100%;
+  border: 1px solid #dfe1e3;
+  border-radius: 7px;
+  padding: 10px 11px;
+  outline: 0;
+  background: #fafafa;
+  color: #17191c;
+  font: inherit;
+  font-size: 12px;
+}
+
+.form-grid input:focus,
+.form-grid select:focus {
+  border-color: #888e94;
+  background: #fff;
+}
+
+.modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 26px;
+}
+
+.cancel-button,
+.delete-text-button {
+  border: 0;
+  background: transparent;
+  color: #666c72;
+  font-size: 12px;
+}
+
+.delete-text-button {
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.details-hero {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px;
+  border-radius: 10px;
+  background: #17191c;
+  color: #fff;
+}
+
+.details-hero div {
+  display: grid;
+  gap: 4px;
+}
+
+.details-hero span {
+  color: #92979c;
+  font-size: 11px;
+}
+
+.details-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.details-list div {
+  padding: 13px 12px;
+  border: 1px solid #e6e8eb;
+  border-radius: 8px;
+}
+
+.details-list span,
+.details-list strong {
+  display: block;
+}
+
+.details-list span {
+  color: #898f95;
+  font-size: 10px;
+}
+
+.details-list strong {
+  margin-top: 5px;
+  font-size: 12px;
+}
+
+/* Responsive */
+
+@media (max-width: 1000px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dashboard-secondary-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .bottom-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .vehicles-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fuel-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .analytics-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .reminder-summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .service-history-summary {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .auth-shell {
+    min-height: 100vh;
+    padding: 0;
+    display: block;
+  }
+
+  .auth-panel {
+    min-height: 100vh;
+    border-radius: 0;
+    padding: 30px 24px;
+  }
+
+  .auth-brand {
+    margin-bottom: 48px;
+  }
+
+  .auth-aside {
+    display: none;
+  }
+
+  .sidebar {
+    width: 70px;
+    padding: 20px 10px;
+  }
+
+  .brand span,
+  .nav-item:not(.active)::after,
+  .profile > div:last-child {
+    display: none;
+  }
+
+  .nav-item {
+    justify-content: center;
+  }
+
+  .main {
+    margin-left: 70px;
+    width: calc(100% - 70px);
+    padding: 25px 18px;
+  }
+
+  .welcome {
+    align-items: flex-start;
+    gap: 15px;
+    flex-direction: column;
+  }
+
+  .vehicle-card {
+    flex-wrap: wrap;
+  }
+
+  .page-intro {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-secondary-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .saved-vehicle-card {
+    gap: 13px;
+  }
+
+  .saved-vehicle-visual {
+    flex-basis: 82px;
+    height: 76px;
+  }
+
+  .form-grid,
+  .details-list {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid .full-field {
+    grid-column: auto;
+  }
+
+  .fuel-insights {
+    flex-direction: column;
+    gap: 13px;
+  }
+
+  .fuel-list-header {
+    gap: 12px;
+  }
+
+  .maintenance-table {
+    min-width: 760px;
+  }
+
+  .analytics-vehicle-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reminder-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .vehicle-detail-stats,
+  .vehicle-activity-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .vehicle-details-hero {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .vehicle-details-specs {
+    width: 100%;
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .history-filter {
+    width: 100%;
+  }
+
+  .service-history-summary {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .fuel-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .analytics-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reminder-summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fuel-entry-list {
+    padding: 16px;
+  }
+
+  .analytics-vehicles {
+    padding: 16px;
+  }
+
+  .analytics-insight {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .analytics-insight small {
+    width: 100%;
+    margin-left: 53px;
+  }
+
+  .analytics-vehicle-metrics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}/* ================================
+   AutoLog — Dashboard UI Upgrade
+   ================================ */
+
+.dashboard-secondary-stats,
+.bottom-grid {
+  gap: 20px;
+}
+
+.dashboard-secondary-stats .stat-card,
+.bottom-grid .panel,
+.vehicle-card {
+  border-radius: 16px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dashboard-secondary-stats .stat-card:hover,
+.bottom-grid .panel:hover,
+.vehicle-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.panel {
+  overflow: hidden;
+}
+
+.panel-header {
+  padding-bottom: 14px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.15);
+}
+
+.quick-actions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.quick-actions button {
+  min-height: 46px;
+  border: 1px solid rgba(128, 128, 128, 0.2);
+  border-radius: 12px;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  transition: all 0.2s ease;
+}
+
+.quick-actions button:hover {
+  transform: translateY(-1px);
+}
+
+@media (max-width: 700px) {
+  .quick-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-secondary-stats,
+  .bottom-grid {
+    grid-template-columns: 1fr;
+  }
+}
